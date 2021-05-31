@@ -1,0 +1,106 @@
+:root {
+  --lessKnownKanji: rgb(140, 200, 215);
+  --moreKnownKanji: rgb(8, 64, 129);
+  --unknownKanji: #e8e8e8;
+}
+
+@font-face {
+  font-family: Makuton;
+  src: url(Makunton.tff);
+}
+
+@font-face {
+  font-family: Work Sans;
+  src: url(WorkSans-Regular.ttf);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+  letter-spacing: -0.011em;
+  font-family: 'Work Sans';
+  font-size: 16px;
+  /* color: #34495e; */
+  background: #f8f9fa;
+}
+
+svg {
+  fill: #34495e;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.characters {
+  font-size: 0.8em;
+  font-family: monospace;
+}
+.count {
+  color: var(--moreKnownKanji);
+  font-family: 'Work Sans';
+  font-weight: 600;
+  font-size: xx-large;
+  transform: translate(-20px, 10px);
+}
+
+h1 {
+  color: rgb(8, 64, 129);
+  text-align: center;
+  font-family: Makuton;
+}
+
+#known {
+  color: var(--moreKnownKanji);
+  font-weight: bold;
+}
+#less {
+  color: var(--lessKnownKanji);
+  font-weight: bold;
+}
+
+#unknown {
+  color: grey;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover,
+a:active {
+  background-color: #faf38da6;
+  color: var(--moreKnownKanji);
+}
+
+p {
+  width: 100%;
+  margin: 0 auto;
+  font-family: 'Work Sans';
+  line-height: 1.5;
+}
+
+#slash {
+  transform: translate(20px, 18px) rotate(45deg);
+  font-size: 2.5em;
+}
+
+#total {
+  transform: translate(35px, 32px);
+  font-size: medium;
+}
+
+#legend {
+  display: flex;
+  align-self: self-start;
+  margin-left: 100px;
+  margin-top: 50px;
+  width: 30%;
+}
+#footer-text {
+  padding: 0px 80px 10px 80px;
+}
