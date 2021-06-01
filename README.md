@@ -1,2 +1,2 @@
-# kanji-learning
-How many kanji do I know? How many can I write? 
+## The Kanji Spiral
+How many kanji do you know?
