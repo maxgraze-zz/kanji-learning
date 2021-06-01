@@ -84,7 +84,7 @@ a:active {
 }
 
 p {
-  width: 100%;
+  width: 75%;
   margin: 0 auto;
   font-family: 'Work Sans';
   line-height: 1.5;
@@ -111,6 +111,7 @@ p {
 }
 #references {
   padding: 0px 80px 10px 80px;
+  margin-left: 100px;
 }
 
 #footer {
@@ -147,10 +148,11 @@ p {
 }
 
 .tab {
-  margin-left: 40px;
+  margin-left: 30px;
 }
 
 img {
   width: 3%;
   position: absolute;
+  transform: translate(-10px, -8px);
 }
