@@ -2,7 +2,7 @@
 //loader
 
 const loader = document.querySelector('#tofukozu');
-const references = document.querySelector('#footer-text');
+const references = document.querySelector('#references');
 const legend = document.querySelector('#legend');
 
 

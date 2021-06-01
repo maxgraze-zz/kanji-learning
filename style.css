@@ -51,6 +51,7 @@ h1 {
   color: rgb(8, 64, 129);
   text-align: center;
   font-family: Makuton;
+  font-size: 2.2em;
 }
 
 #known {
@@ -103,10 +104,14 @@ p {
   margin-top: 50px;
   width: 30%;
 }
-#footer-text {
+#references {
   padding: 0px 80px 10px 80px;
 }
 
+#footer {
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
 .animation {
   position: relative;
   width: 350px;
@@ -134,4 +139,13 @@ p {
 
 .display {
   display: inline;
+}
+
+.tab {
+  margin-left: 40px;
+}
+
+img {
+  width: 3%;
+  position: absolute;
 }
