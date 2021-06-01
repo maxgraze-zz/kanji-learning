@@ -5,15 +5,20 @@
 }
 
 @font-face {
-  font-family: Makuton;
-  src: url(Makunton.tff);
+  font-family: 'Work Sans';
+  src: url('worksans-regular-webfont.woff2') format('woff2'),
+    url('worksans-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: Work Sans;
-  src: url(WorkSans-Regular.ttf);
+  font-family: 'Makuton';
+  src: url('makuton-webfont.woff2') format('woff2'),
+    url('makuton-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
-
 body {
   display: flex;
   flex-direction: column;
@@ -50,7 +55,7 @@ svg {
 h1 {
   color: rgb(8, 64, 129);
   text-align: center;
-  font-family: Makuton;
+  font-family: 'Makuton';
   font-size: 2.2em;
 }
 
