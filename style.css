@@ -94,13 +94,44 @@ p {
   font-size: medium;
 }
 
-#legend {
+.flex {
   display: flex;
   align-self: self-start;
+}
+#legend {
   margin-left: 100px;
   margin-top: 50px;
   width: 30%;
 }
 #footer-text {
   padding: 0px 80px 10px 80px;
+}
+
+.animation {
+  position: relative;
+  width: 350px;
+  margin: auto;
+}
+#tofukozu {
+  position: absolute;
+  left: 105px;
+  animation: tip 2s infinite alternate;
+  padding-top: 100px;
+}
+
+@keyframes tip {
+  0% {
+    transform: translateX(-10px) rotate(-10deg);
+  }
+  100% {
+    transform: translateX(10px) rotate(10deg);
+  }
+}
+
+.display-off {
+  display: none;
+}
+
+.display {
+  display: inline;
 }

@@ -1,23 +1,30 @@
 
 //loader
 
-const loader = document.querySelector('#loading');
+const loader = document.querySelector('#tofukozu');
+const references = document.querySelector('#footer-text');
+const legend = document.querySelector('#legend');
 
-function displayLoading() {
-    loader.classList.add('display');
 
-    // setTimeout(() => {
-    //     loader.classList.remove('display')
-    // }, 5000)
+function display() {
+    references.classList.add('display-off');
+    legend.classList.add('display-off');
+    legend.classList.add('flex');
+
 }
 
 function hideLoading() {
-    loader.classList.remove('display');
+    loader.classList.add('display-off');
+    references.classList.remove('display-off');
+    legend.classList.remove('display-off');
 }
+display();
 
 //needs to be wrapped in an async function due to the async call
 async function draw() {
     let data = await joinData().then(d => {
+        hideLoading();
+        
         return Object.entries(d).map(([key, value]) => value).filter(d => d.readings && d.readings.length >= 2).filter(d => d);
     });
     data.slice(1709, -1);
@@ -29,7 +36,7 @@ async function draw() {
 
     hideLoading();
 //set up dimensions 
-    const width = window.innerWidth * 0.9;
+    const width = 800;
     let dimensions = {
         width: width,
         height: width,
