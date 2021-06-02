@@ -25,9 +25,10 @@ async function draw() {
     let data = await joinData().then(d => {
         hideLoading();
         
-        return Object.entries(d).map(([key, value]) => value).filter(d => d.readings && d.readings.length >= 2).filter(d => d);
+        return Object.entries(d).map(([key, value]) => value);
+        // return Object.entries(d).map(([key, value]) => value).filter(d => d.readings && d.readings.length >= 2).filter(d => d);
     });
-    data.slice(1709, -1);
+    // data.slice(1709, -1);
 //get some important numbers
     let knownCharacters = data.filter(d => d.stats).length;
     let unknownCharacters = data.filter(d => !d.stats).length;
@@ -35,6 +36,7 @@ async function draw() {
     let unknownKanji = '#E8E8E8';
 
     hideLoading();
+
 //set up dimensions 
     const width = 800;
     let dimensions = {
@@ -73,10 +75,10 @@ async function draw() {
 
 
       // Spiral Setup //
-    const spacing = .2,
+    const spacing = .1,
         density = .6,
         numSpirals = 80,
-        innerRadius = 50,
+        innerRadius = 10,
         radiusWidth = 40;
 
 
@@ -126,16 +128,16 @@ async function draw() {
         .style('fill', d => !d.stats ? unknownKanji : color(colorAccessor(d)))
         .attr('dy', -3)
       //need i to be the last one in the series 
-        .attr('startOffset', (d, i) => i * 15);
+        .attr('startOffset', (d, i) => i * 12);
   
     text.transition()
-        .delay((d, i) => i * 30) 
+        .delay((d, i) => i * 35) 
         .duration(8000)
-        .text((d, i) => d.slug);
+        .text((d, i) => d.characters);
 
 
     const countGroup = bounds.append('g')
-        .attr('transform', `translate(${dimensions.boundedWidth / 2 - 16}, ${dimensions.boundedHeight / 2 - 6})`);
+        .attr('transform', `translate(${dimensions.boundedWidth / 2 - 22}, ${dimensions.boundedHeight / 2 - 8})`);
 
 
     const count = countGroup
@@ -146,7 +148,7 @@ async function draw() {
         .attr('fill', 'rgb(8, 64, 129)');
 
     count.transition()
-        .duration(20000)
+        .duration(31500)
         .ease(d3.easeLinear)
         .textTween(() => t => d3.interpolateRound(0, knownCharacters)(t));
       
