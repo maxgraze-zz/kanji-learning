@@ -57,6 +57,7 @@ h1 {
   text-align: center;
   font-family: 'Makuton';
   font-size: 2.2em;
+  padding-bottom: 2em;
 }
 
 #known {
@@ -105,9 +106,12 @@ p {
   align-self: self-start;
 }
 #legend {
-  margin-left: 100px;
-  margin-top: 50px;
-  width: 30%;
+  margin-left: 150px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  width: 25%;
+  align-self: self-end;
+  position: absolute;
 }
 #references {
   padding: 0px 80px 10px 80px;

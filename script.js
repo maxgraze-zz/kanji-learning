@@ -45,7 +45,7 @@ async function draw() {
         radius: width / 2,
 
         margin: {
-            top: 10,
+            top: 0,
             right: 10,
             bottom: 10,
             left: 10,
@@ -68,14 +68,14 @@ async function draw() {
 
     const bounds = wrapper.append('g')
         .style('transform', `translate(${
-            dimensions.margin.left + dimensions.boundedRadius
+            dimensions.margin.left 
         }, ${
-            dimensions.margin.top + dimensions.boundedRadius
+            dimensions.margin.top 
         })`);
 
 
       // Spiral Setup //
-    const spacing = .1,
+    const spacing = .2,
         density = .6,
         numSpirals = 80,
         innerRadius = 10,
