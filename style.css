@@ -105,14 +105,7 @@ p {
   display: flex;
   align-self: self-start;
 }
-#legend {
-  margin-left: 160px;
-  margin-top: 125px;
-  margin-bottom: 50px;
-  width: 25%;
-  align-self: self-end;
-  position: absolute;
-}
+
 #references {
   padding: 0px 80px 10px 80px;
   margin-left: 100px;

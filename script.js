@@ -3,20 +3,17 @@
 
 const loader = document.querySelector('#tofukozu');
 const references = document.querySelector('#references');
-const legend = document.querySelector('#legend');
 
 
 function display() {
     references.classList.add('display-off');
-    legend.classList.add('display-off');
-    legend.classList.add('flex');
+
 
 }
 
 function hideLoading() {
     loader.classList.add('display-off');
     references.classList.remove('display-off');
-    legend.classList.remove('display-off');
 }
 display();
 
@@ -59,6 +56,40 @@ async function draw() {
     - dimensions.margin.bottom;
     dimensions.boundedRadius = dimensions.radius
     - ((dimensions.margin.left + dimensions.margin.right) / 2);
+
+    const annotations = [
+        {
+            id: 'known kanji',
+            type: d3.annotationCallout, //d3.annotationCalloutCurve, // this type of annotation lets you used a curved connector.
+            note: {
+                title: 'Known kanji',
+            },
+            color: 'rgb(8, 64, 129)',
+            x: 620,
+            y: 110,
+            dx: 53,
+            dy: -47, 
+        },
+        {
+            id: 'less known kanji',
+            note: {
+                title: 'Know, but not as well',
+            },
+            color: ' rgb(140, 200, 215)',
+            x: 580,
+            y: 695,
+            dx: 53,
+        },
+     
+    ];
+      
+      // Add annotation to the chart
+    const makeAnnotations = d3.annotation()
+        .annotations(annotations);
+   
+      
+
+        
   // 3. Draw canvas
 
     const wrapper = d3.select('#wrapper')
@@ -73,6 +104,16 @@ async function draw() {
             dimensions.margin.top 
         })`);
 
+
+             
+    bounds
+        .append('g')
+        .call(makeAnnotations);
+    
+    bounds.append('text')
+        .attr('transform', `translate(10, ${dimensions.boundedWidth - 50})`)
+        .text(`Kanji I don't know`)
+        .style('color', 'rgb(191 191 191)');
 
       // Spiral Setup //
     const spacing = .2,
