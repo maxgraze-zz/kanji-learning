@@ -113,7 +113,7 @@ async function draw() {
     bounds.append('text')
         .attr('transform', `translate(10, ${dimensions.boundedWidth - 50})`)
         .text(`Kanji I don't know`)
-        .style('color', 'rgb(191 191 191)');
+        .attr('fill', 'rgb(191 191 191)');
 
       // Spiral Setup //
     const spacing = .2,
