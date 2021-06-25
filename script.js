@@ -3,7 +3,7 @@
 
 const loader = document.querySelector('#tofukozu');
 const references = document.querySelector('#references');
-
+let countColor = '#BF846F';
 
 function display() {
     references.classList.add('display-off');
@@ -64,22 +64,23 @@ async function draw() {
             note: {
                 title: 'Known kanji',
             },
-            color: 'rgb(8, 64, 129)',
+            color: '#bf4e4e',
             x: 620,
             y: 110,
             dx: 53,
             dy: -47, 
         },
-        {
-            id: 'less known kanji',
-            note: {
-                title: 'Know, but not as well',
-            },
-            color: ' rgb(140, 200, 215)',
-            x: 580,
-            y: 695,
-            dx: 53,
-        },
+        // {
+        //     id: 'less known kanji',
+        //     note: {
+        //         title: 'Know, but not as well',
+        //     },
+        //     color: ' #BF846F',
+        //     // color: ' rgb(140, 200, 215)',
+        //     x: 580,
+        //     y: 695,
+        //     dx: 53,
+        // },
      
     ];
       
@@ -128,7 +129,9 @@ async function draw() {
     };
 
       // used to assign nodes color by group
-    const color = d3.scaleSequential(d3.interpolateGnBu)
+    const color = d3.scaleLinear(d3.interpolateLab)
+        // .interpolate(d3.interpolateLab)
+        .range(['whitesmoke', '#bf4e4e'])
         .domain([0, 100]);
 
     const colorAccessor = d => d.stats.percentage_correct;
@@ -186,7 +189,8 @@ async function draw() {
         .append('text')
         .attr('class', 'count')
         .attr('text-anchor', 'start')
-        .attr('fill', 'rgb(8, 64, 129)');
+        .attr('fill', countColor);
+        // .attr('fill', 'rgb(8, 64, 129)');
 
     count.transition()
         .duration(31500)
@@ -199,7 +203,8 @@ async function draw() {
         .attr('id', 'total')
         .attr('text-anchor', 'start')
         .attr('font-size', 'medium')
-        .attr('fill', 'rgb(8, 64, 129)')
+        .attr('fill', countColor)
+        // .attr('fill', 'rgb(8, 64, 129)')
         .text(totalWanikani);
 
     const slash = countGroup
@@ -207,7 +212,8 @@ async function draw() {
         .append('text')
         .attr('id', 'slash')
         .attr('text-anchor', 'start')
-        .attr('fill', 'rgb(8, 64, 129)')
+        .attr('fill', countColor)
+        // .attr('fill', 'rgb(8, 64, 129)')
         .text('/');
        
 }
